@@ -1,0 +1,93 @@
+<!-- 背景氛围图（container 外，不占文档流高度） -->
+<image class="page-bg" src="/images/bg2.jpg" mode="aspectFill"/>
+
+<view class="container">
+
+  <!-- 进度条 -->
+  <view class="progress-wrap">
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progressPct}}%"></view>
+    </view>
+    <text class="progress-text">{{currentIndex + 1}} / {{total}}</text>
+  </view>
+
+  <!-- 题目区域 -->
+  <view class="question-wrap" wx:if="{{currentQ}}">
+    <text class="question-title">{{currentQ.title}}</text>
+
+    <!-- 副提示（多选 / number_input 均可用） -->
+    <text class="multi-hint" wx:if="{{currentQ.hint}}">{{currentQ.hint}}</text>
+    <text class="multi-hint" wx:elif="{{currentQ.type === 'multi'}}">
+      可选 {{currentQ.min}}~{{currentQ.max}} 项（已选 {{selectedCount}} 项）
+    </text>
+
+    <!-- ── 选项列表（single / multi）── -->
+    <view class="options-list" wx:if="{{currentQ.type !== 'number_input'}}">
+      <view
+        class="option-item {{selectedMap[index] ? 'option-selected' : ''}}"
+        wx:for="{{currentQ.options}}"
+        wx:key="index"
+        bindtap="onOptionTap"
+        data-index="{{index}}"
+      >
+        <view class="option-check {{selectedMap[index] ? 'check-active' : ''}}">
+          <text wx:if="{{selectedMap[index]}}" class="check-icon">✓</text>
+        </view>
+        <text class="option-text">{{item.text}}</text>
+      </view>
+    </view>
+
+    <!-- ── 身高体重输入（number_input）── -->
+    <view class="number-input-wrap" wx:if="{{currentQ.type === 'number_input'}}">
+      <view
+        class="number-input-item"
+        wx:for="{{currentQ.fields}}"
+        wx:key="key"
+      >
+        <view class="number-input-label-row">
+          <text class="number-input-label">{{item.label}}</text>
+          <text class="number-input-unit">{{item.unit}}</text>
+        </view>
+        <view class="number-input-box {{numberInputValues[item.key] ? 'input-filled' : ''}}">
+          <input
+            class="number-input-field"
+            type="digit"
+            placeholder="{{item.placeholder}}"
+            placeholder-class="input-placeholder"
+            value="{{numberInputValues[item.key]}}"
+            bindblur="onNumberInput"
+            data-field="{{item.key}}"
+            maxlength="5"
+          />
+        </view>
+        <text class="number-input-range">参考范围：{{item.min}} ~ {{item.max}}</text>
+      </view>
+
+      <!-- BMI 预览（两个值都填了才显示） -->
+      <view class="bmi-preview" wx:if="{{numberInputValid}}">
+        <text class="bmi-icon">📊</text>
+        <text class="bmi-text">数值已填写，点击「继续」进行下一步</text>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 底部按钮区 -->
+  <view class="footer">
+    <view
+      class="btn-back {{currentIndex === 0 ? 'btn-disabled' : ''}}"
+      bindtap="onPrev"
+    >
+      <text>← 上一题</text>
+    </view>
+
+    <view
+      wx:if="{{currentQ}}"
+      class="btn-next {{selectedCount === 0 && currentQ.type !== 'number_input' ? 'btn-disabled' : ''}} {{currentQ.type === 'number_input' && !numberInputValid ? 'btn-disabled' : ''}}"
+      bindtap="onNext"
+    >
+      <text>{{isLast ? '生成推荐 🎯' : '继续 →'}}</text>
+    </view>
+  </view>
+
+</view>

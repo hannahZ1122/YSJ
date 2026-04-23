@@ -1,0 +1,137 @@
+<!-- 背景氛围图（container 外，不占文档流高度） -->
+<image class="page-bg" src="/images/bg1.jpg" mode="aspectFill"/>
+
+<view class="container">
+
+  <!-- ① 顶部：产品类别标签 -->
+  <view class="result-header">
+    <text class="result-label">您的益生菌辅助推荐结果</text>
+    <view class="tag-chip">
+      <text class="tag-text">{{product.tag}}</text>
+    </view>
+  </view>
+
+  <!-- ② 雷达图 -->
+  <view class="section card radar-card">
+    <view class="section-header">
+      <text class="section-icon">📊</text>
+      <text class="section-title">配方能力图谱</text>
+    </view>
+    <canvas type="2d" id="radarChart" class="radar-canvas"></canvas>
+  </view>
+
+  <!-- ③ 产品主卡 -->
+  <view class="product-card card">
+    <view class="product-icon-wrap">
+      <text class="product-icon">🌿</text>
+    </view>
+    <text class="product-name">{{product.name}}</text>
+    <text class="product-desc">{{product.description}}</text>
+
+    <!-- 功效亮点标签（来自 product.highlights） -->
+    <view class="highlight-row" wx:if="{{product.highlights && product.highlights.length}}">
+      <view class="highlight-tag" wx:for="{{product.highlights}}" wx:key="index">
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- ④ AI 个性化解读 -->
+  <view class="section card ai-section" wx:if="{{aiExplanation}}">
+    <view class="section-header">
+      <text class="ai-icon-emoji">🤖</text>
+      <text class="ai-label">AI 专属解读</text>
+    </view>
+    <text class="ai-text">{{aiExplanation}}</text>
+  </view>
+
+  <!-- ⑥ 核心菌株 -->
+  <view class="section card" wx:if="{{product.strains && product.strains.length}}">
+    <view class="section-header">
+      <text class="section-icon">🧬</text>
+      <text class="section-title">核心菌株</text>
+    </view>
+    <view class="strains-wrap">
+      <view class="strain-tag" wx:for="{{product.strains}}" wx:key="index">
+        <text class="strain-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ⑦ 益生元 & 辅助成分 -->
+  <view class="section card ingredients-card" wx:if="{{product.prebiotics || product.additionalIngredients}}">
+    <view class="section-header">
+      <text class="section-icon">🌾</text>
+      <text class="section-title">配方成分</text>
+    </view>
+
+    <view class="ingredient-group" wx:if="{{product.prebiotics && product.prebiotics.length}}">
+      <text class="ingredient-group-label">益生元</text>
+      <view class="strains-wrap">
+        <view class="strain-tag prebiotics-tag" wx:for="{{product.prebiotics}}" wx:key="index">
+          <text class="strain-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="ingredient-group" wx:if="{{product.additionalIngredients && product.additionalIngredients.length}}">
+      <text class="ingredient-group-label">辅助成分</text>
+      <view class="strains-wrap">
+        <view class="strain-tag addons-tag" wx:for="{{product.additionalIngredients}}" wx:key="index">
+          <text class="strain-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ⑧ 服用建议（通用） -->
+  <view class="section card">
+    <view class="section-header">
+      <text class="section-icon">📋</text>
+      <text class="section-title">服用建议</text>
+    </view>
+    <view class="usage-list">
+      <view class="usage-item" wx:for="{{usageTips}}" wx:key="index">
+        <text class="usage-icon">{{item.icon}}</text>
+        <view class="usage-content">
+          <text class="usage-label">{{item.label}}</text>
+          <text class="usage-value">{{item.value}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ⑨ 生活建议（来自 product.lifeTips） -->
+  <view class="section card" wx:if="{{product.lifeTips && product.lifeTips.length}}">
+    <view class="section-header">
+      <text class="section-icon">💡</text>
+      <text class="section-title">配合建议</text>
+    </view>
+    <view class="tips-list">
+      <view class="tip-item" wx:for="{{product.lifeTips}}" wx:key="index">
+        <text class="tip-icon">{{item.icon}}</text>
+        <text class="tip-text">{{item.text}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部占位 -->
+  <view style="height: 210rpx;"></view>
+
+  <!-- ⑩ 底部操作区 -->
+  <view class="footer">
+    <view class="btn-product" bindtap="onViewProduct">
+      <text class="btn-product-text">查看相关产品 →</text>
+    </view>
+    <view class="btn-restart" bindtap="onRestart">
+      <text>重新评估</text>
+    </view>
+  </view>
+
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    <text>本内容仅供健康参考，不作为医疗诊断依据\n如有健康问题请咨询专业医生</text>
+  </view>
+
+</view>

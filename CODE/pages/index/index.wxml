@@ -1,0 +1,66 @@
+<!-- 背景氛围图（container 外，不占文档流高度） -->
+<image class="page-bg" src="/images/bg1.jpg" mode="aspectFill"/>
+
+<view class="container">
+
+  <!-- 顶部品牌区 -->
+  <view class="hero">
+    <view class="logo-placeholder">
+      <text class="logo-icon">🌿</text>
+    </view>
+    <text class="hero-title">个性化益生菌推荐</text>
+    <text class="hero-subtitle">基于您的生活习惯与健康状况\n为您匹配最适合的益生菌配方</text>
+  </view>
+
+  <!-- 双入口卡片 -->
+  <view class="entry-section">
+    <!-- A路径：问卷 -->
+    <view class="entry-card" bindtap="goToSurvey">
+      <view class="entry-icon-wrap entry-icon-green">
+        <text class="entry-icon">📋</text>
+      </view>
+      <view class="entry-content">
+        <text class="entry-title">填写健康问卷</text>
+        <text class="entry-desc">约 20 题 · 3 分钟\n根据生活习惯精准匹配</text>
+      </view>
+      <view class="entry-arrow">
+        <text class="arrow-text">›</text>
+      </view>
+    </view>
+
+    <!-- B路径：上传报告 -->
+    <view class="entry-card" bindtap="goToUpload">
+      <view class="entry-icon-wrap entry-icon-teal">
+        <text class="entry-icon">🔬</text>
+      </view>
+      <view class="entry-content">
+        <text class="entry-title">上传肠道体检报告</text>
+        <text class="entry-desc">AI 智能解析 · 更精准\n支持图片或 PDF 格式</text>
+      </view>
+      <view class="entry-arrow">
+        <text class="arrow-text">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能亮点 -->
+  <view class="features">
+    <view class="feature-item">
+      <text class="feature-icon">🧬</text>
+      <text class="feature-text">科学菌株匹配</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">🤖</text>
+      <text class="feature-text">AI 个性解读</text>
+    </view>
+    <view class="feature-item">
+      <text class="feature-icon">🔒</text>
+      <text class="feature-text">隐私安全保障</text>
+    </view>
+  </view>
+
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    <text>本内容仅供健康参考，不作为医疗诊断依据\n如有健康问题请咨询专业医生</text>
+  </view>
+</view>

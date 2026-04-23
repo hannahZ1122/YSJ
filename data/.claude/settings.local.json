@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/c/Users/zhang/**)",
+      "Read(//c/Users/zhang//**)",
+      "Bash(cp \"/c/Users/zhang/OneDrive/桌面/YSJ/微信图片_20260421110535_61_317.png\" \"/c/Users/zhang/OneDrive/桌面/YSJ/CODE/images/bg1.png\")",
+      "Bash(cp \"/c/Users/zhang/OneDrive/桌面/YSJ/微信图片_20260421110536_62_317.png\" \"/c/Users/zhang/OneDrive/桌面/YSJ/CODE/images/bg2.png\")",
+      "Bash(ssh -o StrictHostKeyChecking=no root@124.221.80.235 'python3 -c \" *)",
+      "Bash(scp -o StrictHostKeyChecking=no \"/c/Users/zhang/OneDrive/桌面/YSJ/app.js\" root@124.221.80.235:/root/YSJ/app.js)",
+      "Bash(python3 -c \"import reportlab; print\\('ok'\\)\")",
+      "Bash(pip install *)",
+      "Bash(py --version)",
+      "Bash(py -m pip install reportlab -q)",
+      "Bash(py -c \"import reportlab; print\\('ok'\\)\")",
+      "Bash(py generate.py)",
+      "Bash(py -c \"from PIL import Image; print\\('pillow ok'\\)\")",
+      "Bash(py -m pip install pillow -q)",
+      "Bash(git --version)"
+    ]
+  }
+}

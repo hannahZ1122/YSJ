@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/survey/survey",
+    "pages/upload/upload",
+    "pages/loading/loading",
+    "pages/result/result"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3B82F6",
+    "navigationBarTitleText": "益生菌健康测评",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F7F9FC"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

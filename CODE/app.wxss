@@ -1,0 +1,123 @@
+/* 全局 CSS 变量 — 确认品牌配色后只改这里 */
+page {
+  /* 主色调（蓝白主题） */
+  --color-primary: #3B82F6;
+  --color-primary-dark: #2563EB;
+  --color-primary-light: #EFF6FF;
+  --color-primary-ultra-light: #F5F9FF;
+
+  /* 文字 */
+  --color-text: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-placeholder: #AAAAAA;
+
+  /* 背景 */
+  --color-bg: #F7F9FC;
+  --color-white: #FFFFFF;
+  --color-border: #DBEAFE;
+
+  /* 状态色 */
+  --color-success: #3B82F6;
+  --color-warning: #F5A623;
+  --color-error: #E05555;
+
+  /* 圆角 */
+  --radius-sm: 8rpx;
+  --radius-md: 16rpx;
+  --radius-lg: 24rpx;
+  --radius-full: 999rpx;
+
+  /* 间距 */
+  --spacing-xs: 8rpx;
+  --spacing-sm: 16rpx;
+  --spacing-md: 24rpx;
+  --spacing-lg: 32rpx;
+  --spacing-xl: 48rpx;
+  --spacing-page: 32rpx;
+
+  /* 字号 */
+  --font-xs: 22rpx;
+  --font-sm: 26rpx;
+  --font-md: 28rpx;
+  --font-lg: 32rpx;
+  --font-xl: 36rpx;
+  --font-2xl: 44rpx;
+  --font-3xl: 52rpx;
+
+  /* 阴影 */
+  --shadow-card: 0 2rpx 16rpx rgba(0, 0, 0, 0.06);
+  --shadow-btn: 0 4rpx 12rpx rgba(59, 130, 246, 0.30);
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  font-size: var(--font-md);
+  box-sizing: border-box;
+}
+
+/* 通用工具类 */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+
+/* 通用按钮 */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  height: 96rpx;
+  font-size: var(--font-lg);
+  font-weight: 600;
+  box-shadow: var(--shadow-btn);
+  border: none;
+  width: 100%;
+}
+
+.btn-primary:active { opacity: 0.85; }
+
+.btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-primary);
+  border: 2rpx solid var(--color-primary);
+  border-radius: var(--radius-full);
+  height: 88rpx;
+  font-size: var(--font-md);
+  font-weight: 500;
+  width: 100%;
+}
+
+/* 卡片 */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-lg);
+}
+
+/* 页面通用容器 */
+.page-container {
+  min-height: 100vh;
+  padding: var(--spacing-page);
+  background: var(--color-bg);
+  box-sizing: border-box;
+}
+
+/* 免责声明 */
+.disclaimer {
+  font-size: var(--font-xs);
+  color: var(--color-text-placeholder);
+  text-align: center;
+  line-height: 1.6;
+  padding: var(--spacing-md) 0;
+}

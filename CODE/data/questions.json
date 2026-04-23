@@ -1,0 +1,361 @@
+[
+  {
+  "version": "5.0",
+  "survey_name": "益生菌精准营养测评专业版",
+  "total_questions": 35,
+  "questions": [
+    {
+      "id": "q1_goal",
+      "type": "multi",
+      "min": 1,
+      "max": 3,
+      "title": "1. 您当前最希望改善的健康需求是？(可选1-3项)",
+      "options": [
+        { "text": "肠道消化/排便习惯", "tag": "P1", "branch": "gut" },
+        { "text": "体态管理/减脂控糖", "tag": "P3", "branch": "weight" },
+        { "text": "专注力/脑力效率", "tag": "P4", "branch": "brain" },
+        { "text": "情绪压力/睡眠质量", "tag": "P5", "branch": "mood" },
+        { "text": "抗衰老/身体机能", "tag": "P2_P7", "branch": "age" },
+        { "text": "两性活力/私处健康", "tag": "P9_P10", "branch": "gender" },
+        { "text": "免疫力/过敏体质", "tag": "P6", "branch": "immune" }
+      ]
+    },
+    {
+      "id": "q2_gender",
+      "type": "single",
+      "title": "2. 您的性别",
+      "options": [
+        { "text": "男", "scores": { "P9": 10 } },
+        { "text": "女", "scores": { "P10": 10 } }
+      ]
+    },
+    {
+      "id": "q3_age",
+      "type": "single",
+      "title": "3. 您的年龄段",
+      "options": [
+        { "text": "18-30岁", "scores": { "P3": 5 } },
+        { "text": "31-45岁", "scores": { "P2": 10 } },
+        { "text": "46-55岁", "scores": { "P7": 10, "P2": 5 } },
+        { "text": "55岁以上", "scores": { "P7": 20 } }
+      ]
+    },
+    {
+      "id": "q4_bmi",
+      "type": "single",
+      "title": "4. 您的体型状态自评",
+      "options": [
+        { "text": "偏瘦/营养吸收一般", "scores": { "P1": 10 } },
+        { "text": "匀称/正常", "scores": { "P7": 2 } },
+        { "text": "超重/体脂偏高", "scores": { "P3": 15 } }
+      ]
+    },
+    {
+      "id": "q5_gut_freq",
+      "type": "single",
+      "title": "5. 您的排便频率通常是？",
+      "options": [
+        { "text": "每天1次，规律", "scores": { "P1": 0 } },
+        { "text": "2-3天1次", "scores": { "P1": 10 } },
+        { "text": "1周少于2次", "scores": { "P1": 20 } },
+        { "text": "每天多次且不成形", "scores": { "P6": 15, "P1": 5 } }
+      ]
+    },
+    {
+      "id": "q6_gut_status",
+      "type": "single",
+      "title": "6. 您排便时的主要感受是？",
+      "options": [
+        { "text": "轻松顺畅", "scores": { "P1": 0 } },
+        { "text": "费力/干燥", "scores": { "P1": 15 } },
+        { "text": "排不尽感/粘马桶", "scores": { "P1": 10, "P3": 5 } },
+        { "text": "腹痛急迫/稀软", "scores": { "P6": 15 } }
+      ]
+    },
+    {
+      "id": "q7_gas",
+      "type": "single",
+      "title": "7. 您是否经常感到餐后腹胀或排气过多？",
+      "options": [
+        { "text": "经常，且气味较重", "scores": { "P1": 15 } },
+        { "text": "偶尔，取决于食物", "scores": { "P1": 5 } },
+        { "text": "基本没有", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q8_diet_pref",
+      "type": "single",
+      "title": "8. 您的日常饮食偏好？",
+      "options": [
+        { "text": "清淡为主", "scores": { "P7": 5 } },
+        { "text": "重油重辣/重口味", "scores": { "P1": 10, "P3": 5 } },
+        { "text": "高糖/奶茶甜点爱好者", "scores": { "P3": 15 } },
+        { "text": "高蛋白/纯肉食", "scores": { "P1": 10 } }
+      ]
+    },
+    {
+      "id": "q9_veggie",
+      "type": "single",
+      "title": "9. 您每天能摄入充足的蔬菜水果吗？",
+      "options": [
+        { "text": "非常充足", "scores": { "P7": 5 } },
+        { "text": "一般，种类较单一", "scores": { "P1": 5 } },
+        { "text": "很少吃，外卖为主", "scores": { "P1": 15, "P3": 5 } }
+      ]
+    },
+    {
+      "id": "q10_takeout",
+      "type": "single",
+      "title": "10. 您每周食用外卖或堂食社交的频率？",
+      "options": [
+        { "text": "几乎不，居家做饭", "scores": { "P7": 5 } },
+        { "text": "每周1-3次", "scores": { "P1": 5 } },
+        { "text": "每周5次以上", "scores": { "P1": 15, "P3": 10 } }
+      ]
+    },
+    {
+      "id": "q11_alcohol",
+      "type": "single",
+      "title": "11. 您的饮酒习惯是？",
+      "options": [
+        { "text": "滴酒不沾", "scores": { "P6": 5 } },
+        { "text": "偶尔小酌", "scores": { "P1": 5 } },
+        { "text": "频繁社交/每日必喝", "scores": { "P1": 10, "P9": 10, "P3": 5 } }
+      ]
+    },
+    {
+      "id": "q12_water",
+      "type": "single",
+      "title": "12. 您每天的饮水量是否达到1.5L以上？",
+      "options": [
+        { "text": "是", "scores": { "P3": 2 } },
+        { "text": "否，经常忘记喝水", "scores": { "P1": 10, "P3": 5 } }
+      ]
+    },
+    {
+      "id": "q13_exercise",
+      "type": "single",
+      "title": "13. 您的运动频率是？",
+      "options": [
+        { "text": "规律运动(每周3次以上)", "scores": { "P3": 5, "P9": 5 } },
+        { "text": "偶尔活动", "scores": { "P3": 2 } },
+        { "text": "长期久坐，基本不练", "scores": { "P3": 15, "P1": 10 } }
+      ]
+    },
+    {
+      "id": "q14_sleep_time",
+      "type": "single",
+      "title": "14. 您通常几点入睡？",
+      "options": [
+        { "text": "22:00之前", "scores": { "P7": 10 } },
+        { "text": "22:00-00:00", "scores": { "P5": 5 } },
+        { "text": "00:00之后(熬夜族)", "scores": { "P2": 10, "P5": 10, "P6": 5 } }
+      ]
+    },
+    {
+      "id": "q15_sleep_quality",
+      "type": "single",
+      "title": "15. 您的睡眠深度如何？",
+      "options": [
+        { "text": "一觉到天亮", "scores": { "P7": 5 } },
+        { "text": "易惊醒/梦多", "scores": { "P5": 15 } },
+        { "text": "醒后依然感到疲惫", "scores": { "P4": 10, "P5": 5 } }
+      ]
+    },
+    {
+      "id": "q16_stress",
+      "type": "single",
+      "title": "16. 您感知到的精神压力水平？",
+      "options": [
+        { "text": "较小，心情愉悦", "scores": { "P5": 0 } },
+        { "text": "中等，工作繁忙", "scores": { "P5": 10, "P4": 5 } },
+        { "text": "极大，经常感到焦虑/易怒", "scores": { "P5": 20, "P4": 10 } }
+      ]
+    },
+    {
+      "id": "q17_brain_fog",
+      "type": "single",
+      "title": "17. 是否经常感到反应迟钝、大脑断片(脑雾)？",
+      "options": [
+        { "text": "是", "scores": { "P4": 20 } },
+        { "text": "偶尔", "scores": { "P4": 10 } },
+        { "text": "基本不", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q18_focus",
+      "type": "single",
+      "title": "18. 在深度工作/学习时，您的专注时间？",
+      "options": [
+        { "text": "1小时以上", "scores": { "P4": 0 } },
+        { "text": "半小时左右", "scores": { "P4": 10 } },
+        { "text": "很难静下心，容易分神", "scores": { "P4": 20 } }
+      ]
+    },
+    {
+      "id": "q19_immune",
+      "type": "single",
+      "title": "19. 近一年，您感冒或呼吸道感染的频率？",
+      "options": [
+        { "text": "0-1次", "scores": { "P7": 5 } },
+        { "text": "2-3次", "scores": { "P6": 10 } },
+        { "text": "4次以上(抵抗力弱)", "scores": { "P6": 20 } }
+      ]
+    },
+    {
+      "id": "q20_allergy",
+      "type": "single",
+      "title": "20. 您是否患有皮肤敏感、鼻炎或其他过敏问题？",
+      "options": [
+        { "text": "长期受困扰", "scores": { "P6": 20 } },
+        { "text": "偶尔季节性发作", "scores": { "P6": 10 } },
+        { "text": "没有过敏史", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q21_antibiotic",
+      "type": "single",
+      "title": "21. 近一个月内是否使用过阿莫西林、头孢等抗生素？",
+      "options": [
+        { "text": "是", "scores": { "P1": 20, "P6": 10 } },
+        { "text": "否", "scores": { "P1": 0 } }
+      ]
+    },
+    {
+      "id": "q22_skin_age",
+      "type": "single",
+      "title": "22. 您认为目前的皮肤状态相比同龄人？",
+      "options": [
+        { "text": "更年轻细腻", "scores": { "P7": 5 } },
+        { "text": "差不多", "scores": { "P2": 5 } },
+        { "text": "明显暗沉/皱纹/显老", "scores": { "P2": 20, "P7": 10 } }
+      ]
+    },
+    {
+      "id": "q23_skin_problem",
+      "type": "single",
+      "title": "23. 您的皮肤常出现的困扰是？",
+      "options": [
+        { "text": "出油/粉刺痘痘", "scores": { "P1": 10, "P3": 5 } },
+        { "text": "干燥脱皮/红血丝", "scores": { "P6": 10, "P2": 5 } },
+        { "text": "弹性缺失/松弛", "scores": { "P2": 15, "P7": 5 } }
+      ]
+    },
+    {
+      "id": "q24_eyes",
+      "type": "single",
+      "title": "24. 您的眼睛是否经常感到干涩、视觉疲劳？",
+      "options": [
+        { "text": "经常", "scores": { "P4": 10, "P2": 5 } },
+        { "text": "不常有", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q25_energy",
+      "type": "single",
+      "title": "25. 晨起后的精神状态？",
+      "options": [
+        { "text": "神清气爽", "scores": { "P7": 5 } },
+        { "text": "昏昏沉沉，起不来", "scores": { "P4": 15, "P5": 5 } }
+      ]
+    },
+    {
+      "id": "q26_mouth",
+      "type": "single",
+      "title": "26. 是否有口苦、口臭或晨起异味？",
+      "options": [
+        { "text": "有", "scores": { "P1": 15, "P3": 5 } },
+        { "text": "无", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q27_tongue",
+      "type": "single",
+      "title": "27. 观察舌苔，是否有厚腻或发白现象？",
+      "options": [
+        { "text": "厚腻发白", "scores": { "P1": 15, "P3": 5 } },
+        { "text": "薄白红润", "scores": { "P7": 5 } }
+      ]
+    },
+    {
+      "id": "q28_male_energy",
+      "type": "single",
+      "title": "28. (男士必答) 感到体力透支或精力不足的情况？",
+      "options": [
+        { "text": "频繁发生", "scores": { "P9": 20 } },
+        { "text": "偶尔", "scores": { "P9": 10 } },
+        { "text": "精力旺盛", "scores": { "P9": 0 } },
+        { "text": "我是女性(跳过)", "scores": { "P9": 0 } }
+      ]
+    },
+    {
+      "id": "q29_female_private",
+      "type": "single",
+      "title": "29. (女士必答) 私处是否有瘙痒、异味等反复不适？",
+      "options": [
+        { "text": "是，反复发作", "scores": { "P10": 20 } },
+        { "text": "偶尔不适", "scores": { "P10": 10 } },
+        { "text": "从未有过", "scores": { "P10": 0 } },
+        { "text": "我是男性(跳过)", "scores": { "P10": 0 } }
+      ]
+    },
+    {
+      "id": "q30_joint",
+      "type": "single",
+      "title": "30. 是否有腰酸背痛或关节僵硬感？",
+      "options": [
+        { "text": "有", "scores": { "P7": 10, "P2": 5 } },
+        { "text": "无", "scores": { "P7": 5 } }
+      ]
+    },
+    {
+      "id": "q31_after_meal",
+      "type": "single",
+      "title": "31. 餐后是否有强烈的困倦感？",
+      "options": [
+        { "text": "是", "scores": { "P3": 15, "P1": 5 } },
+        { "text": "无", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q32_sugar_addict",
+      "type": "single",
+      "title": "32. 是否感觉对糖分、奶茶有“上瘾”依赖？",
+      "options": [
+        { "text": "是", "scores": { "P3": 20 } },
+        { "text": "无", "scores": { "P7": 2 } }
+      ]
+    },
+    {
+      "id": "q33_work_env",
+      "type": "single",
+      "title": "33. 您的主要办公环境？",
+      "options": [
+        { "text": "空调房久坐", "scores": { "P1": 5, "P2": 5 } },
+        { "text": "户外/频繁走动", "scores": { "P6": 5 } },
+        { "text": "经常出差/差旅", "scores": { "P1": 15 } }
+      ]
+    },
+    {
+      "id": "q34_history",
+      "type": "single",
+      "title": "34. 既往是否有调理经历？",
+      "options": [
+        { "text": "试过益生菌，效果不明显", "scores": { "P1": 10, "P6": 10 } },
+        { "text": "从未刻意调理过", "scores": { "P1": 5 } },
+        { "text": "有规律服用补剂习惯", "scores": { "P7": 10 } }
+      ]
+    },
+    {
+      "id": "q35_expectation",
+      "type": "single",
+      "title": "35. 您对本次调理的期待周期？",
+      "options": [
+        { "text": "1个月内见效", "scores": { "P1": 5 } },
+        { "text": "3个月深度改善", "scores": { "P3": 5, "P7": 5 } },
+        { "text": "长期作为健康习惯", "scores": { "P7": 15 } }
+      ]
+    }
+  ]
+}
+]

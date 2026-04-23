@@ -1,0 +1,32 @@
+<!-- 背景氛围图（container 外，不占文档流高度） -->
+<image class="page-bg" src="/images/bg2.jpg" mode="aspectFill"/>
+
+<view class="container">
+  <!-- 动画区 -->
+  <view class="animation-wrap">
+    <view class="spinner">
+      <view class="dot dot1"></view>
+      <view class="dot dot2"></view>
+      <view class="dot dot3"></view>
+    </view>
+  </view>
+
+  <!-- 文案区 -->
+  <view class="text-wrap">
+    <text class="loading-text">{{statusText}}</text>
+    <text class="loading-sub">约需 {{countdown}} 秒，请稍候</text>
+  </view>
+
+  <!-- 超时错误 -->
+  <view class="error-wrap" wx:if="{{isTimeout}}">
+    <text class="error-icon">😕</text>
+    <text class="error-title">分析时间较长</text>
+    <text class="error-desc">网络或服务繁忙，请稍后重试</text>
+    <view class="btn-retry" bindtap="onRetry">
+      <text>重新尝试</text>
+    </view>
+    <view class="btn-back-home" bindtap="onBackHome">
+      <text>返回首页</text>
+    </view>
+  </view>
+</view>

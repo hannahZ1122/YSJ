@@ -1,0 +1,21 @@
+# 环境变量（含 API Key，绝对不能上传）
+.env
+.env.local
+.env.*
+
+# 依赖包
+node_modules/
+
+# 临时上传文件
+uploads/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 测试报告（可选，不影响代码）
+test-reports/

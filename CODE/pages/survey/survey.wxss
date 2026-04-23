@@ -1,0 +1,266 @@
+.container {
+  min-height: 100vh;
+  background: transparent;
+  padding: var(--spacing-lg) var(--spacing-page) 180rpx;
+  box-sizing: border-box;
+}
+
+/* ── 页面背景图 ── */
+.page-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+/* ── 进度条 ── */
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 48rpx;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8rpx;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  min-width: 80rpx;
+  text-align: right;
+}
+
+/* ── 问题区 ── */
+.question-wrap {
+}
+
+.question-title {
+  font-size: var(--font-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.5;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.multi-hint {
+  display: block;
+  font-size: var(--font-xs);
+  color: var(--color-primary);
+  margin-bottom: 32rpx;
+  background: var(--color-primary-light);
+  padding: 8rpx 20rpx;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+/* ── 选项列表 ── */
+.options-list {
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  background: var(--color-white);
+  border: 2rpx solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 30rpx 28rpx;
+  transition: all 0.15s;
+}
+
+.option-item:active {
+  transform: scale(0.98);
+}
+
+.option-selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-ultra-light);
+}
+
+.option-check {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  border: 2rpx solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.check-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.check-icon {
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.option-text {
+  font-size: var(--font-md);
+  color: var(--color-text);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.option-selected .option-text {
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+/* ── 底部按钮 ── */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  padding: 24rpx var(--spacing-page) calc(24rpx + env(safe-area-inset-bottom));
+  display: flex;
+  gap: 16rpx;
+  box-shadow: 0 -2rpx 16rpx rgba(0,0,0,0.06);
+}
+
+.btn-back {
+  flex: 0 0 180rpx;
+  height: 88rpx;
+  border-radius: var(--radius-full);
+  border: 2rpx solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.btn-next {
+  flex: 1;
+  height: 88rpx;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-white);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn-next:active { opacity: 0.85; }
+.btn-back:active { opacity: 0.7; }
+
+.btn-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ── 身高体重输入 ── */
+.number-input-wrap {
+  margin-top: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+
+.number-input-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.number-input-label-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10rpx;
+}
+
+.number-input-label {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.number-input-unit {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+}
+
+.number-input-box {
+  background: var(--color-white);
+  border: 2rpx solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0 28rpx;
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.15s;
+}
+
+.input-filled {
+  border-color: var(--color-primary);
+  background: var(--color-primary-ultra-light);
+}
+
+.number-input-field {
+  width: 100%;
+  font-size: var(--font-xl);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.input-placeholder {
+  color: var(--color-text-placeholder);
+  font-weight: 400;
+  font-size: var(--font-md);
+}
+
+.number-input-range {
+  font-size: var(--font-xs);
+  color: var(--color-text-placeholder);
+  padding-left: 4rpx;
+}
+
+.bmi-preview {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  padding: 20rpx 24rpx;
+}
+
+.bmi-icon { font-size: 32rpx; }
+
+.bmi-text {
+  font-size: var(--font-sm);
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
