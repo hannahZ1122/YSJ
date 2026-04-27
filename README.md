@@ -18,7 +18,14 @@ A hybrid architecture:
 - End-to-end Mini Program workflow
 
 ## Demo
-
+<table>
+  <tr>
+    <td><img src="https://github.com/hannahZ1122/YSJ/blob/main/demo1.png" width="200"/></td>
+    <td><img src="https://github.com/hannahZ1122/YSJ/blob/main/demo2.png" width="200"/></td>
+    <td><img src="https://github.com/hannahZ1122/YSJ/blob/main/demo3.png" width="200"/></td>
+    <td><img src="https://github.com/hannahZ1122/YSJ/blob/main/demo4.png" width="200"/></td>
+  </tr>
+</table>
 
 ## Results
 - Stable and consistent recommendation outputs
